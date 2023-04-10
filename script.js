@@ -50,7 +50,7 @@ function adjustContainerSize() {
     const updateContainerSize = () => {
         const padding = 20; // Set padding around the container (in pixels)
         const windowWidth = window.innerWidth - 2 * padding;
-        const windowHeight = window.innerHeight - 2 * padding - 40; // Subtract 40 to account for back button and its padding
+        const windowHeight = window.innerHeight - 2 * padding - 60; // Subtract 40 to account for back button and its padding
         const imgAspectRatio = image.naturalWidth / image.naturalHeight;
         const windowAspectRatio = windowWidth / windowHeight;
 
@@ -70,7 +70,6 @@ function adjustContainerSize() {
 
         container.style.width = imgWidth + "px";
         container.style.height = imgHeight + "px";
-
     };
 
     if (image.complete) {
