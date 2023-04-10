@@ -9,10 +9,18 @@ slider.addEventListener('mousedown', (e) => {
     e.preventDefault();
 });
 
+slider.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    window.addEventListener('touchmove', onMouseMove);
+    window.addEventListener('touchend', onMouseUp);
+    e.preventDefault();
+});
+
 function onMouseMove(e) {
     if (!isDragging) return;
     const sliderWidth = slider.clientWidth;
-    const x = e.pageX - slider.parentElement.getBoundingClientRect().left - (sliderWidth / 2);
+    const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+    const x = clientX - slider.parentElement.getBoundingClientRect().left - (sliderWidth / 2);
     const width = slider.parentElement.clientWidth - sliderWidth;
     let percent = (x / width) * 100;
 
@@ -31,6 +39,8 @@ function onMouseUp() {
     isDragging = false;
     window.removeEventListener('mousemove', onMouseMove);
     window.removeEventListener('mouseup', onMouseUp);
+    window.removeEventListener('touchmove', onMouseMove);
+    window.removeEventListener('touchend', onMouseUp);
 }
 
 function adjustContainerSize() {
@@ -71,8 +81,6 @@ function adjustContainerSize() {
     // Update container size when the window is resized
     window.addEventListener("resize", updateContainerSize);
 }
-
-
 
 function updateClipPathOnResize() {
     window.addEventListener('resize', () => {
