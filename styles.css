@@ -35,8 +35,8 @@ body {
 
 .slider-container {
     position: relative;
-    width: 1000px; /* Set the initial width to 600px */
-    height: 800px; /* Set the initial height to 400px */
+    width: 600px; /* Set the initial width to 600px */
+    height: 400px; /* Set the initial height to 400px */
     overflow: hidden;
     border: 2px solid #333;
 }
@@ -85,10 +85,3 @@ body {
     height: 100%;
 }
 
-@media (max-width: 600px) {
-  .image-container img {
-    max-width: 100%;
-    height: auto;
-    margin: 20px;
-  }
-}

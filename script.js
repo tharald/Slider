@@ -70,6 +70,10 @@ function adjustContainerSize() {
 
         container.style.width = imgWidth + "px";
         container.style.height = imgHeight + "px";
+
+        // Adjust container's top margin to center it vertically
+        const containerTopMargin = Math.max((window.innerHeight - imgHeight - 40) / 2, padding);
+        container.style.marginTop = containerTopMargin + "px";
     };
 
     if (image.complete) {
@@ -81,6 +85,7 @@ function adjustContainerSize() {
     // Update container size when the window is resized
     window.addEventListener("resize", updateContainerSize);
 }
+
 
 
 function updateClipPathOnResize() {
