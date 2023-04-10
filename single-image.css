@@ -1,3 +1,5 @@
+/* single-image.css */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -8,21 +10,32 @@ body {
     height: 100vh;
     margin: 0;
     padding: 20px;
+    position: relative;
+    box-sizing: border-box; /* Add this line */
 }
 
 .image-container {
     max-width: 100%;
     max-height: 100%;
+    width: calc(100% - 40px); /* Add this line */
+    height: calc(100% - 60px); /* Add this line, extra 20px is to account for back button */
+    position: relative; /* Add this line */
 }
 
 .image-container img {
     max-width: 100%;
     max-height: 100%;
+    position: absolute; /* Add this line */
+    top: 50%; /* Add this line */
+    left: 50%; /* Add this line */
+    transform: translate(-50%, -50%); /* Add this line */
 }
 
 .back-button {
     display: inline-block;
-    margin-top: 10px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
     padding: 5px 10px;
     border: 1px solid #333;
     border-radius: 3px;
