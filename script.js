@@ -50,7 +50,7 @@ function adjustContainerSize() {
     const updateContainerSize = () => {
         const padding = 20; // Set padding around the container (in pixels)
         const windowWidth = window.innerWidth - 2 * padding;
-        const windowHeight = window.innerHeight - 2 * padding;
+        const windowHeight = window.innerHeight - 2 * padding - 40; // Subtract 40 to account for back button and its padding
         const imgAspectRatio = image.naturalWidth / image.naturalHeight;
         const windowAspectRatio = windowWidth / windowHeight;
 
@@ -81,6 +81,7 @@ function adjustContainerSize() {
     // Update container size when the window is resized
     window.addEventListener("resize", updateContainerSize);
 }
+
 
 function updateClipPathOnResize() {
     window.addEventListener('resize', () => {
