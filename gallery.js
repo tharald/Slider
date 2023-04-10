@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const galleryItems = document.querySelectorAll(".gallery-item");
+    const galleryItems = document.querySelectorAll('.gallery-item');
 
-    galleryItems.forEach(item => {
-        item.addEventListener("click", function () {
-            const url = item.getAttribute("data-url");
+    galleryItems.forEach((item) => {
+        item.addEventListener('click', () => {
+            const url = item.getAttribute('data-url');
+			const image = item.getAttribute('data-image');
+			sessionStorage.setItem('selectedImage', image);
             window.location.href = url;
         });
     });
