@@ -85,3 +85,16 @@ body {
     height: 100%;
 }
 
+@media screen and (max-width: 767px) {
+  .slider-container {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  .back-btn {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 1000;
+  }
+}
